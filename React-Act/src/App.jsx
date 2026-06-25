@@ -1,4 +1,5 @@
-import Food from "./assets/component/Food"
+import Food from "./component/Food"
+import Destination from "./component/Destination"
 
 function App() {
   
@@ -7,6 +8,7 @@ function App() {
     <>
      <h1>React Activityy</h1>
      <Food/>
+     <Destination/>
     </>
   )
 }
