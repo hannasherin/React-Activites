@@ -1,7 +1,7 @@
 import Food from "./component/Food"
 import Destination from "./component/Destination"
 import Form from "./component/Form"
-
+import StudReg from "./component/StudReg"
 function App() {
   
 
@@ -13,6 +13,8 @@ function App() {
      <br />
      <br />
      <Form/>
+     <br />
+     <StudReg/>
     </>
   )
 }
