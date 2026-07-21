@@ -1,0 +1,10 @@
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.cart{
+    border: 1px solid grey;
+    background-color: rgb(255, 245, 232);
+    padding: 40px;
+}

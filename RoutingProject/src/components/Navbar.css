@@ -1,0 +1,11 @@
+ul{
+    display: flex;
+    gap: 20px;
+    background-color: greenyellow;
+    list-style: none;
+    color: white;
+    padding: 20px;
+}
+li{
+    cursor: pointer;
+}
