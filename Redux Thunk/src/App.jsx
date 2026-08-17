@@ -1,12 +1,18 @@
+import { Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
+import CreateTask from "./pages/CreateTask"
+import TaskList from "./pages/TaskList"
 
 function App() {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<CreateTask />} />
+        <Route path="/tasklist" element={<TaskList />} />
 
-<h1>Create Task</h1>     
+      </Routes>
     </>
   )
 }
