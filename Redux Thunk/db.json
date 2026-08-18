@@ -1,20 +1,19 @@
 {
-    "tasks":[
-        {
-            "id":1,
-            "title":"new task",
-            "description":"add new task"
-        },
-         {
-            "id":1,
-            "title":"new task",
-            "description":"add new task for clean house"
-        },
-         {
-            "id":1,
-            "title":"new task",
-            "description":"add new task for clean gym"
-        }
-        
-    ]
+  "tasks": [
+    {
+      "id": 1,
+      "title": "new task",
+      "description": "add new task for clean house"
+    },
+    {
+      "id": 3,
+      "title": "new task",
+      "description": "add new task for gym"
+    },
+    {
+      "title": "new task",
+      "description": "something sdkfmg,b",
+      "id": 4
+    }
+  ]
 }

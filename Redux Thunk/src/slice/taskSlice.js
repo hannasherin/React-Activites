@@ -24,6 +24,19 @@ export const getTaskFromServer=createAsyncThunk(
     }
 )
 
+export const deleteTask=createAsyncThunk(
+    'tasks/deleteTask',
+    async(id,{rejectWithValue})=>{
+        try {
+            await api.delete(`/tasks/${id}`)
+            return id
+        } catch (error) {
+            return rejectWithValue('not sk found')
+        }
+
+    }
+)
+
 const taskSlice=createSlice({
     name:'tasks',
     initialState,
@@ -46,6 +59,22 @@ const taskSlice=createSlice({
              state.isloading=false
              state.error=action.payload
              state.tasks=[]
+        })
+
+
+        // ===========delete Task ============
+        .addCase(deleteTask.pending,(state,action)=>{
+               state.isloading=true
+        })
+
+        .addCase(deleteTask.fulfilled,(state,action)=>{
+            state.isloading=false
+            state.tasks=state.tasks.filter((task)=>task.id !== action.payload)
+        })
+
+        .addCase(deleteTask.rejected,(state,action)=>{
+            state.isloading=false
+            state.error=action.payload
         })
 
     }
