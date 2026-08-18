@@ -37,6 +37,19 @@ export const deleteTask=createAsyncThunk(
     }
 )
 
+//post 
+export const addToTask=createAsyncThunk(
+    'tasks/addToTask',
+    async(formData,{rejectWithValue})=>{
+        try {
+            const response=await api.post('/tasks',formData)
+            return response.data
+        } catch (error) {
+            return rejectWithValue({error:'No Task Created'})
+        }
+    }
+)
+
 const taskSlice=createSlice({
     name:'tasks',
     initialState,
@@ -77,6 +90,22 @@ const taskSlice=createSlice({
             state.error=action.payload
         })
 
+
+        // ==============Task Created ===========
+
+        .addCase(addToTask.pending,(state,action)=>{
+            state.isloading=true
+        })
+
+         .addCase(addToTask.fulfilled,(state,action)=>{
+            state.isloading=false
+            state.tasks.push(action.payload)
+        })
+
+         .addCase(addToTask.rejected,(state,action)=>{
+            state.isloading=false
+            state.error=action.payload.error
+        })
     }
 })
 
